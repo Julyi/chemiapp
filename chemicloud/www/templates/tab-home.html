@@ -1,0 +1,33 @@
+<ion-view view-title="首页"  class="main-bg">
+  <ion-content style="padding:0px 30px;" scroll="false">
+    <div class="row" style="height:25%; display:table; ">
+     <div class="col" style="vertical-align:middle;display:table-cell;">
+       <label class="home-font-large" >25 ℃</label>
+       <label class="home-font-small" > &nbsp;&nbsp;多云转晴</label>
+     </div>
+    </div>
+    <div class="row" style="height:50%">
+         <!-- Insert echars map -->
+         <div id="echartShandong" style="width:940px;height:420px"></div>
+
+    </div>
+    <div class="row" style="height:25%">
+       <div class="col ">
+        <label class="home-font-small">园区1</label></br>
+        <label class="home-font-big" ng-bind="homeData.yq.AQI">88</label><label class="home-font-small">AQI</label></br>
+        <label class="home-font-tiny" ng-bind="homeData.yq.AIRSTATE">轻度污染</label></br>
+        <label class="home-font-tiny">首要污染物1：{{homeData.yq.PREPOLLUTE}}</label>
+
+       </div>
+       <div class="col">
+
+         <label class="home-font-small">聊城市</label></br>
+         <label class="home-font-big" ng-bind="homeData.lc.AQI">128</label><label class="home-font-small">AQI</label></br>
+         <label class="home-font-tiny" ng-bind="homeData.lc.AIRSTATE">轻度污染</label></br>
+         <label class="home-font-tiny">首要污染物：{{homeData.lc.PREPOLLUTE}}</label>
+       </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

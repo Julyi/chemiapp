@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+   <script src="echarts.min.js"></script>
+   <script src="shandong.js"></script>
+<script>
+// $.get('shandong.json', function (shandongJson) {
+    //echarts.registerMap('shandong', shandongJson);
+    var chart = echarts.init(document.getElementById('main'));
+
+    chart.setOption({
+    	title : {
+    		text : '山东省各市化工企业数量分布',
+    		textAlign : 'left'
+    	},
+        tooltip: {
+            trigger: 'item',
+            showDelay: 0,
+            transitionDuration: 0.2,
+            formatter: function (params) {
+                var value = (params.value + '').split('.');
+                value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+                return  params.name + ': ' + value;
+            }
+        },
+        geo: {
+        map: '山东',
+        top: 0,
+        itemStyle: {
+            normal: {
+                areaColor: '#323c48',
+                borderColor: '#404a59'
+            },
+            emphasis: {
+                areaColor: '#2a333d'
+            }
+        }
+        },
+        visualMap: {
+            left: 'right',
+            min: 1,
+            max: 100,
+            inRange: {
+                color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+            },
+            calculable: true
+        },
+        series: [{
+        	z : 1 ,
+            type: 'map',
+            map: '山东',
+            top : '50%',
+            data: [ {name:'聊城市',value:Math.random()*100},
+            		{name:'济南市',value:Math.random()*100},
+            		{name:'济宁市',value:Math.random()*100},
+            		{name:'潍坊市',value:Math.random()*100},
+            		{name:'东营市',value:Math.random()*100},
+            		{name:'青岛市',value:Math.random()*100},
+            		{name:'烟台市',value:Math.random()*100},
+            		{name:'泰安市',value:Math.random()*100},
+            		{name:'威海市',value:Math.random()*100},
+            		{name:'德州市',value:Math.random()*100},
+            		{name:'临沂市',value:Math.random()*100},
+            		{name:'日照市',value:Math.random()*100},
+            		{name:'淄博市',value:Math.random()*100}
+            	]             
+            },
+            {
+                name: '地点',
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                zlevel: 2,
+                rippleEffect: {
+                    brushType: 'stroke',
+                    period:7,
+                    scale:26
+                },
+                label: {
+                    emphasis: {
+                        show: true,
+                        position: 'right',
+                        formatter: '{b}'
+                    }
+                },
+                symbolSize: 2,
+                showEffectOn: 'render',
+                itemStyle: {
+                    normal: {
+                        color: '#46bee9'
+                    }
+                },
+                data: [
+                    {"name":"聊城新材料","value":[116.236176,36.919394,10],"symbolSize":2,"itemStyle":{"normal":{"color":"#F58158"}}},
+                    {"name":"济宁新材料","value":[116.177772,36.153551,4],"symbolSize":2,"itemStyle":{"normal":{"color":"#F58158"}}},
+                    {"name":"德州新材料","value":[116.142224,36.721752,4],"symbolSize":2,"itemStyle":{"normal":{"color":"#F58158"}}}
+                ]
+            }]
+    });
+// });
+</script>
+</head>
+<body>
+  
+<div id = 'main'   style="width:50%;height:800px;"></div>
+</body>
+</html>

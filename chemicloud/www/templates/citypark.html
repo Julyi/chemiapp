@@ -1,0 +1,24 @@
+<ion-view view-title="园区列表" class="main-bg" hide-nav-bar="true">
+  <ion-header-bar class="bar-custom">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+    <h1 class="title">园区列表</h1>
+  </ion-header-bar>
+  <ion-content>
+
+
+ <div class="list" ng-class="{false: 'ths_row_odd', true: 'ths_row_even'}[$index%2==0]" ng-click="showDetail(item)" ng-repeat="item in datalist" >
+
+
+
+        <a class="item item-icon-left item-icon-right menu-list-item" href="#/zhny-yqnhztpj/2/line/1">
+         <i class="icon ion-ios-analytics-outline"></i>
+         <label ng-bind="item.text"></label>
+
+       </a>
+
+
+      </div>
+  </ion-content>
+</ion-view>

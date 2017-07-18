@@ -1,0 +1,39 @@
+<ion-view view-title="login" hide-nav-bar="true" class="login-bg">
+<ion-content >
+  <div class="login" id="loginForm">
+  <div class="login-content">
+  <div class="input-content">
+    <!--<ion-item>
+      <i  class="icon ion-ios-person-outline item-left" ></i>
+      <input type="text" placeholder="用户名" ng-model="user.name"></input>
+    </ion-item>
+    <ion-item>
+      <i  class="icon ion-ios-lock-outline item-left" ></i>
+      <input type="password" placeholder="密码" ng-model="user.pwd"></input>
+    </ion-item>-->
+  <label class="item item-input">
+    <i class="icon ion-ios-person-outline placeholder-icon"></i>
+    <input type="text" placeholder="用户名" ng-model="loginInfo.userName">
+  </label>
+  <label class="item item-input">
+    <i class="icon ion-ios-locked-outline placeholder-icon"></i>
+    <input type="password" placeholder="密码" ng-model="loginInfo.userPass">
+  </label>
+</div>
+     <div class="login-remember">
+        <label ng-class="{true:'label1 cur',false:'label1'}[loginInfo.remUser]" style="float: left;">
+          <input type="checkbox" ng-model="loginInfo.remUser"/>记住用户名</label>
+        <label ng-class="{true:'label2 cur',false:'label2'}[loginInfo.remPass]" ng-click="onPassCheck()" style="float: right;">
+          <input type="checkbox" ng-model="loginInfo.remPass"/>记住密码</label>
+      </div>
+
+          <div style="padding:30px 30px 30px 30px "><button class="button button-custom button-block" ng-click="login()">登录</button></div>
+        </div>
+</div>
+      <div class="spacer" style="width:100%;"ng-style="{height: spacerHeight}"></div>
+      <!-- <label class="item item-input" style="background-color: rgba(255, 255, 255, 0.8);border-width: 0px;padding-left: 28%;color:#686868">
+        IP:
+        <input type="text" placeholder="服务地址" ng-model="loginInfo.host" style="color:#686868;">
+      </label> -->
+
+</ion-content>

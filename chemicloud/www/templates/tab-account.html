@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <style type="text/css">
+      html,body,.map{
+        height: 100%;
+        margin: 0px;
+      }
+      .panel{
+        position: absolute;
+        background-color: #fff;
+        border: solid 1px silver;
+        box-shadow: 3px 4px 3px 0px silver;
+        right: 10px;
+        top: 10px;
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 4px
+      }
+    </style>
+    <title>行政区查询－下拉列表</title>
+  </head>
+  <body>
+    <div id="mapDiv" class="map" tabindex="0"></div>
+    <div class = 'panel'>选择切换省市：<select open id = 'subDistricts'></select></div>
+
+
+
+    <script type="text/javascript">
+        var map = new AMap.Map('mapDiv', {
+            resizeEnable: true,
+            center: new AMap.LngLat(116.306206, 39.975468),
+            zoom:10
+        });
+        var districtSearch = new AMap.DistrictSearch();
+        districtSearch.search('山东',function(status, result){
+            var subDistricts = result.districtList[0].districtList;
+            var select = document.getElementById('subDistricts');
+            for(var i = 0;i < subDistricts.length; i += 1){
+                    var name = subDistricts[i].name;
+                    var option = document.createElement('option');
+                    option.value = option.innerHTML = name;
+                    select.appendChild(option);
+            }
+            select.onchange = function(){map.setCity(this.value)};
+            select.value = subDistricts[0].name;
+            select.onchange();
+        })
+
+    </script>
+<script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+
+  </body>
+
+</html>

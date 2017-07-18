@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+   <script src="echarts.js"></script>
+   <script src="shandong.js"></script>
+<script>
+$.get('shandong.json', function (shandongJson) {
+    echarts.registerMap('shandong', shandongJson);
+    var chart = echarts.init(document.getElementById('main'));
+    var datas = [ {name:'聊城市',value:Math.random()*100},
+            		{name:'济南市',value:Math.random()*100},
+            		{name:'济宁市',value:Math.random()*100},
+            		{name:'潍坊市',value:Math.random()*100},
+            		{name:'东营市',value:Math.random()*100},
+            		{name:'青岛市',value:Math.random()*100},
+            		{name:'烟台市',value:Math.random()*100},
+            		{name:'泰安市',value:Math.random()*100},
+            		{name:'威海市',value:Math.random()*100},
+            		{name:'德州市',value:Math.random()*100},
+            		{name:'临沂市',value:Math.random()*100},
+            		{name:'日照市',value:Math.random()*100},
+            		{name:'滨州市',value:Math.random()*100},
+            		{name:'淄博市',value:Math.random()*100},
+            		{name:'莱芜市',value:Math.random()*100},
+            		{name:'枣庄市',value:Math.random()*100},
+            		{name:'菏泽市',value:Math.random()*100}
+            	];
+    chart.setOption({
+    	title : {
+    		text : '山东省各地市化工企业数量分布',
+    		textAlign : 'left'
+    	},
+    	
+        tooltip: {
+            trigger: 'item',
+            showDelay: 0,
+            transitionDuration: 0.2,
+            formatter: function (params) {
+                var value = (params.value + '').split('.');
+                value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+                return  params.name + '化工企业共计: ' + value + '家';
+            }
+        },
+        visualMap: {
+            right : 0,
+            left:960,
+            min: 0,
+	        max: 100,
+	        splitNumber: 5,
+	        color: ['#d94e5d','#eac736','#50a3ba'],
+	        textStyle: {
+	            color: '#fff'
+	        }
+        },
+        series: [{
+        	z : 1 ,
+            type: 'map',
+            map: 'shandong',
+            left:0,
+            right:'50%',
+            top :30,
+            itemStyle:{
+                normal:{label:{show:true}},
+                emphasis:{label:{show:true}}
+        	},
+            data: datas},
+        		{
+		            name:'各地市化工企业情况',
+		            type:'pie',
+		            radius: ['30%', '50%'],
+		            avoidLabelOverlap: false,
+		            center : ['75%','50%'],
+		            label: {
+		                normal: {
+		                    show: true
+		                },
+		                emphasis: {
+		                    show: true,
+		                    textStyle: {
+		                        fontSize: '30',
+		                        fontWeight: 'bold'
+		                    }
+		                }
+		            },
+			        labelLine: {
+			            normal: {
+			                show: true
+			            }
+			        },
+		            data:datas
+		        }
+
+
+
+        ]
+    });
+});
+</script>
+</head>
+<body>
+<div id = 'main1'   style="width:960px;height:400px;"></div>
+<div id = 'main'   style="width:960px;height:400px;"></div>
+</body>
+</html>

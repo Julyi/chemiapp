@@ -1,0 +1,20 @@
+var citys = [
+{"name": "山东省","center": "119.296707,38.0143","citycode":"shandong","subDistrict":[]},
+{"name": "济南市","center": "117.000923,36.675807","citycode": "0531","subDistrict":[]},
+{"name": "青岛市","center": "120.355173,36.082982","citycode": "0532","subDistrict":[]},
+{"name": "淄博市","center": "118.047648,36.814939","citycode": "0533","subDistrict":[]},
+{"name": "枣庄市","center": "117.557964,34.856424","citycode": "0632","subDistrict":[]},
+{"name": "东营市","center": "118.66471,37.434564","citycode": "0546","subDistrict":[]},
+{"name": "烟台市","center": "121.391382,37.539297","citycode": "0535","subDistrict":[]},
+{"name": "潍坊市","center": "119.107078,36.70925","citycode": "0536","subDistrict":[]},
+{"name": "济宁市","center": "116.587245,35.415393","citycode": "0537","subDistrict":[]},
+{"name": "泰安市","center": "117.129063,36.194968","citycode": "0538","subDistrict":[]},
+{"name": "威海市","center": "122.116394,37.509691","citycode": "0631","subDistrict":[]},
+{"name": "日照市","center": "119.461208,35.428588","citycode": "0633","subDistrict":[]},
+{"name": "莱芜市","center": "117.677736,36.214397","citycode": "0634","subDistrict":[]},
+{"name": "临沂市","center": "118.326443,35.065282","citycode": "0539","subDistrict":[]},
+{"name": "德州市","center": "116.307428,37.453968","citycode": "0534","subDistrict":[]},
+{"name": "聊城市","center": "115.980367,36.456013","citycode": "0635","subDistrict":[]},
+{"name": "滨州市","center": "118.016974,37.383542","citycode": "0543","subDistrict":[]},
+{"name": "菏泽市","center": "115.469381,35.246531","citycode": "0530","subDistrict":[]}
+]
