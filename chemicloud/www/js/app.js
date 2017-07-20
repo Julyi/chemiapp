@@ -113,8 +113,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
         }
       }
     })
+    .state('parkinfo', {
+      url: '/parkinfo/:departcode/:qtype',// parkcode use pk in t_s_depart ,qtype can be intro、detail
+      templateUrl: 'templates/parkinfo.html',
+      controller: 'cityParkCtrl'
+    })
     .state('cityPark', {
-      url: '/cityPark/:citycode/:qtype',// citycode use pk in t_s_depart ,qtype can be park、Enteprise、Project
+      url: '/cityPark/:departcode/:qtype',// citycode use pk in t_s_depart ,qtype can be park、Enteprise、Project
       templateUrl: 'templates/citypark.html',
       controller: 'cityParkCtrl'
     })

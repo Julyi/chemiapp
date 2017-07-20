@@ -12,6 +12,9 @@ angular.module('starter.services', [])
    return {
      'getParkList':function (paramsObj) {
        return ajax.get(ip+HttpConstant.PARK_LIST,paramsObj,true);
+     },
+     'getParkinfo':function (paramsObj) {
+       return '"key":"value"';
      }
    };
  })

@@ -31,6 +31,13 @@ ion-tabs.tabs-color-active-custom .tab-item.activated > .tab-title {
 }
 .tab-title {font-size:16px; }
 
+/**icon样式*/
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
 /**自定义标题栏样式*/
 .bar.bar-custom {
   border-color: #8DCB64;
@@ -261,6 +268,9 @@ ion-tabs.tabs-color-active-custom .tab-item.activated > .tab-title {
     }
     .home-font-small{
       font-size:22px;color:white;
+    }
+    .home-font-list{
+      font-size:1.5em;color:#00008B;
     }
     .home-font-tiny{
       font-size:14px;color:white;

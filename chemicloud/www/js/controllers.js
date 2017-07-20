@@ -12,11 +12,11 @@ angular.module('starter.controllers', [])
 .controller('cityParkCtrl', function($scope,Park,$state,$ionicHistory) {
   //请求某个城市的园区信息列表
 
-  $scope.citycode = $state.params.citycode;
+  $scope.departcode = $state.params.departcode;
   $scope.qtype = $state.params.qtype;
 
   var params = {
-    'id': $scope.citycode,
+    'id': $scope.departcode,
     'qtype': $scope.qtype
   };
 
@@ -24,6 +24,23 @@ angular.module('starter.controllers', [])
     $scope.datalist = resp.data;
   });
 })
+
+.controller('parkinfoCtrl', function($scope,Park,$state,$ionicHistory) {
+  //请求某个城市的园区信息列表
+
+  $scope.departcode = $state.params.departcode;
+  $scope.qtype = $state.params.qtype;
+
+  var params = {
+    'id': $scope.departcode,
+    'qtype': $scope.qtype
+  };
+
+  Park.getParkinfo(params).then(function(resp){
+    $scope.datalist = resp.data;
+  });
+})
+
 
 .controller('LoginCtrl',function($scope,localStorage,utilFun,thsToast,Login,$state,config,$timeout,$window,$cordovaDevice) {
   ionic.DomUtil.ready(function () {
@@ -59,7 +76,7 @@ angular.module('starter.controllers', [])
       LoginSelfSys();
     };
 
-    function x() {
+    function LoginSelfSys() {
       var params = {
         'userName': $scope.loginInfo.userName,
         'password': $scope.loginInfo.userPass
