@@ -10,6 +10,7 @@ angular.module('starter.constants', [])
     "HOME_DATA":"enterpriseController.do?getCityNum",
     "LOGIN":"loginController.do?applogin",
     "PARK_LIST":"departController.do?depList",
+    "PARK_INFO":"chemicalParkController.do?getparkinfobypk",
     "ZhaqYqaqztpj":"rest/LuxiSafetyService/graph",//智慧安全-园区安全整体评价
     "BanKuaiList":"rest/QueryConService/groupentercode",//获取版块列表
     "EnterList":"rest/QueryConService/departname",//根据版块信息获取企业列表

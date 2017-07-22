@@ -1,0 +1,37 @@
+<ion-view view-title="{{parkinfo.parkname}}" class="main-bg" hide-nav-bar="true">
+  <ion-header-bar class="bar-custom">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+    <h1 class="title">{{parkinfo.parkname}}</h1>
+    <button class="button-right button-clear header-item">
+      <a href="#/tab/home"> <i class="icon ion-ios-home-outline"></i> </a>
+    </button>
+  </ion-header-bar>
+
+  <ion-content>
+    <div class="list" >
+      <label>园区名称：</label><label> {{parkinfo.parkname}}</label><br/>
+      <label>园区编码：</label><label>{{parkinfo.parkid}}</label><br/>
+      <label>园区级别：</label><label>{{parkinfo.levels}}</label><br/>
+      <label>负 责 人：</label><label>{{parkinfo.parkdirecter}}</label><br/>
+      <label>企业数量：</label><label>{{parkinfo.entamount}}</label><br/>
+      <label>批准日期：</label><label>    {{parkinfo.approvaldate}}</label><br/>
+      <label>批准机构：</label><label>    {{parkinfo.approvalauthority}}</label><br/>
+      <label>规划面积：</label><label>    {{parkinfo.planarea}}</label>平方千米<br/>
+      <label>主导产业：</label><label>{{parkinfo.primeindustry}}</label><br/>
+      <label>规划产业：</label><label>{{parkinfo.planindustry}}</label><br/>
+      <label>联 系 人：</label><label>    {{parkinfo.linkman}}</label><br/>
+      <label>联系方式：</label><label>    {{parkinfo.linkmantel}}</label><br/>
+      <label>所属地市：</label><label>{{parkinfo.city}}</label><br/>
+      <label>园区简介：</label><label>{{parkinfo.introduction}}</label><br/>
+      <label>四至范围：</label><label>{{parkinfo.range}}</label><br/>
+
+
+      <br/><br/><br/>
+      <label>parkinfo: {{parkinfo}}</label>
+
+
+    </div>
+  </ion-content>
+</ion-view>

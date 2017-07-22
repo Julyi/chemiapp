@@ -461,6 +461,14 @@ ion-tabs.tabs-color-active-custom .tab-item.activated > .tab-title {
   color: #85BF5F;
   box-shadow: none;
 }
+
+.button-right {
+  position:absolute;
+  top:5px;
+  right:5px;
+  bottom:5px;
+}
+
 .menu-list-item.active, .menu-list-item.activated {
     background-color: rgba(133, 191, 95, 0.3);
 }

@@ -26,8 +26,11 @@ angular.module('starter.controllers', [])
 })
 
 .controller('parkinfoCtrl', function($scope,Park,$state,$ionicHistory) {
-  //请求某个城市的园区信息列表
 
+})
+
+.controller('parkdetailCtrl', function($scope,Park,$state,$ionicHistory) {
+  //请求园区详情信息
   $scope.departcode = $state.params.departcode;
   $scope.qtype = $state.params.qtype;
 
@@ -35,12 +38,11 @@ angular.module('starter.controllers', [])
     'id': $scope.departcode,
     'qtype': $scope.qtype
   };
-
   Park.getParkinfo(params).then(function(resp){
-    $scope.datalist = resp.data;
+    info = resp.data;
+    $scope.parkinfo = info.obj;
   });
 })
-
 
 .controller('LoginCtrl',function($scope,localStorage,utilFun,thsToast,Login,$state,config,$timeout,$window,$cordovaDevice) {
   ionic.DomUtil.ready(function () {

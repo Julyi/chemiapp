@@ -118,10 +118,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
       templateUrl: 'templates/parkinfo.html',
       controller: 'cityParkCtrl'
     })
+    .state('parkdetail', {
+      url: '/parkdetail/:departcode/:qtype',// parkcode use pk in t_s_depart ,qtype can be intro、detail
+      templateUrl: 'templates/parkdetail.html',
+      controller: 'parkdetailCtrl'
+    })
     .state('cityPark', {
       url: '/cityPark/:departcode/:qtype',// citycode use pk in t_s_depart ,qtype can be park、Enteprise、Project
       templateUrl: 'templates/citypark.html',
       controller: 'cityParkCtrl'
+    })
+    .state('parkadmin', {
+      url: '/parkdetail/:departcode/:qtype',// parkcode use pk in t_s_depart ,qtype can be intro、detail
+      templateUrl: 'templates/parkadmin.html',
+      controller: 'parkdetailCtrl'
     })
   ;
 
